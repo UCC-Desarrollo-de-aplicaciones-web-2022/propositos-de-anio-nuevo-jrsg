@@ -19,63 +19,65 @@
 <body>
 
 <div class="container">
+    <form action="guardar.php" method="post">
 
-    <h1>Nuevo usuario</h1>
+        <h1>Nuevo usuario</h1>
 
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>E-mail</label>
-                <input type="email" name="email" class="form-control">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" name="name" class="form-control">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" name="pass1" class="form-control">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" name="pass1" class="form-control">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Confirmar</label>
-                <input type="password" name="pass2" class="form-control">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Confirmar</label>
+                    <input type="password" name="pass2" class="form-control">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Fotografía</label>
-                <input type="file" name="fotografia" class="form-control"/>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Fotografía</label>
+                    <input type="file" name="fotografia" class="form-control"/>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 </body>

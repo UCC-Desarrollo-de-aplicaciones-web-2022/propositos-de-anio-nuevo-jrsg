@@ -17,42 +17,45 @@
     </head>
 
     <body>     
-       
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Propósitos de año nuevo</h1>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-4">
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Propósitos de año nuevo</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                            <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" name="email" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
-                        <label>E-mail</label>
-                        <input type="email" name="email" class="form-control"/>
+                            <label>Contraseña</label>
+                            <input type="password" name="pass" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Ingresar</button>
+
+                        <button type="submit" formaction="usuario/nuevo.php" class="btn btn-secondary registrarse">Registrarse</button>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Contraseña</label>
-                        <input type="password" name="pass" class="form-control"/>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">Ingresar</button>
-
-                    <button type="submit" class="btn btn-secondary registrarse">Registrarse</button>
-                </div>
-            </div>
-        </div>
+        </form>
 
     </body>
 </html>
