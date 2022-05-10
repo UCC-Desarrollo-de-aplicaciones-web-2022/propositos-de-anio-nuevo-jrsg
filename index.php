@@ -18,7 +18,7 @@
 
     <body>     
 
-        <form>
+        <form action="login.php" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -49,8 +49,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success">Ingresar</button>
-
                         <button type="submit" formaction="usuario/nuevo.php" class="btn btn-secondary registrarse">Registrarse</button>
+
+                        <div class="alert alert-danger mt-3">
+                            Usuario o contraseña incorrecta
+                        </div>
+
                     </div>
                 </div>
             </div>

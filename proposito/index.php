@@ -1,3 +1,11 @@
+<?php
+include '../config/conexion.php';
+$id_usuario = 2;
+
+$sql = "select * from propositos where id_usuario = $id_usuario";
+$result = mysqli_query($conexion, $sql);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +21,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script>
+        function eliminar(id){
+            if(confirm('¿Estás seguro?')){
+                window.location = 'borrar.php?id=' + id
+            }
+        }
 
+        function modificar(id){
+            window.location = 'proposito.php?id=' + id;
+        }
+    </script>
 </head>
 
 <body>
@@ -29,6 +47,9 @@
 
             <button type="button" class="btn btn-primary">Nuevo propósito</button>
 
+            <?php
+            if(mysqli_num_rows($result) > 0){
+            ?>
             <table class="table mt-5">
                 <thead>
                     <tr>
@@ -40,16 +61,31 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php
+                $c = 1;
+                while($fila = mysqli_fetch_assoc($result)){
+                ?>
                     <tr>
-                        <td>1</td>
-                        <td>Propósito de año nuevo 1</td>
-                        <td>2020-02-01</td>
-                        <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
-                        <td><button class="btn btn-secondary btn-sm">Actualizar</button></td>
+                        <td><?php echo $c++ ?></td>
+                        <td><?php echo $fila['proposito'] ?></td>
+                        <td><?php echo $fila['vencimiento'] ?></td>
+                        <td><button class="btn btn-danger btn-sm" onclick="eliminar(<?php echo $fila['id'] ?>)">Eliminar</button></td>
+                        <td><button class="btn btn-secondary btn-sm" onclick="modificar(<?php echo $fila['id'] ?>)">Actualizar</button></td>
                     </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
-
+            <?php
+            }else{
+            ?>
+            <div class="alert alert-warning mt-5">
+                No hay propósitos, empieza registrando uno.
+            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>

@@ -1,3 +1,22 @@
+<?php
+include '../config/conexion.php';
+
+$id = !empty($_GET['id']) ? $_GET['id'] : '';
+
+$proposito      = '';
+$vencimiento    = '';
+if(!empty($id)){
+    $sql = "select * from propositos where id = $id";
+    $result = mysqli_query($conexion, $sql);
+
+    if($result){
+        $fila = mysqli_fetch_assoc($result);
+        $proposito      = $fila['proposito'];
+        $vencimiento    = $fila['vencimiento'];
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,7 +62,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Propósito</label>
-                <input type="text" name="proposito" class="form-control">
+                <input type="text" name="proposito" class="form-control" value="<?php echo $proposito ?>">
             </div>
         </div>
     </div>
@@ -52,7 +71,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Fecha de vencimiento</label>
-                <input type="date" name="vencimiento" class="form-control"/>
+                <input type="date" name="vencimiento" class="form-control"  value="<?php echo $vencimiento ?>"/>
             </div>
         </div>
     </div>
