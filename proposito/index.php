@@ -1,6 +1,8 @@
 <?php
+session_start();
+
 include '../config/conexion.php';
-$id_usuario = 2;
+$id_usuario = $_SESSION['id'];
 
 $sql = "select * from propositos where id_usuario = $id_usuario";
 $result = mysqli_query($conexion, $sql);

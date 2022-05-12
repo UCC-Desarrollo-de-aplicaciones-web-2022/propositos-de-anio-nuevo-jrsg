@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include '../config/conexion.php';
 
 $id = !empty($_GET['id']) ? $_GET['id'] : '';
@@ -40,14 +42,14 @@ if(!empty($id)){
 <?php require '../config/nav.php' ?>
 
 <div class="container">
-
+    <form action="guardar.php" method="post">
     <div class="row">
         <div class="col-md-12">
             <h1>Propósito</h1>
 
             <input type="submit" name="accion" value="Cancelar" class="btn btn-secondary">
             <input type="submit" name="accion" value="Guardar" class="btn btn-primary">
-            <input type="hidden" name="id_proposito" value="" />
+            <input type="hidden" name="id_proposito" value="<?php echo $id ?>" />
         </div>
     </div>
 
@@ -84,6 +86,8 @@ if(!empty($id)){
             </div>
         </div>
     </div>
+
+    </form>
 </div>
 
 </body>

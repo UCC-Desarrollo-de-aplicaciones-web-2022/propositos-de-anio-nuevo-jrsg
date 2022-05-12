@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include 'config/conexion.php';
 
 $email  = $_POST['email'];
@@ -16,6 +18,10 @@ if(!empty($email) && !empty($pass)) {
             $pass_md5 = md5($pass);
 
             if($pass_bd == $pass_md5) {
+                $_SESSION['id']     = $fila['id'];
+                $_SESSION['email']  = $fila['email'];
+                $_SESSION['nombre'] = $fila['nombre'];
+
                 header("location: proposito/index.php");
                 exit;
             }
