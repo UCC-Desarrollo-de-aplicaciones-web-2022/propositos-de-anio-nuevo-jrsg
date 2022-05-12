@@ -24,10 +24,18 @@ if(!empty($email) && !empty($pass)) {
 
                 header("location: proposito/index.php");
                 exit;
+            }else{
+                echo 'if 4';
             }
+        }else{
+            echo 'if 3';
         }
+    }else{
+        echo 'if 2';
     }
+}else{
+    echo 'if 1';
 }
 
-header("location: index.php?msg=1");
+//header("location: index.php?msg=1");
 ?>

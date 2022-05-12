@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if(empty($_SESSION) || empty($_SESSION['id'])){ //¿hay valores en la sesión?
+    header('location: ../index.php');
+    exit;
+}
+
 include '../config/conexion.php';
 
 $id = !empty($_GET['id']) ? $_GET['id'] : '';
